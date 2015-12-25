@@ -6,10 +6,10 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-package "nginx" do
+package "php5-fpm" do
 	action	:install
 end
 
-service "nginx" do
+service "php5-fpm" do
 	action [:enable, :start]
 end
