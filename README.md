@@ -1,4 +1,4 @@
-# asgard-test
+# Asgard-Test
 This repo is the storage of a series of Chef recipes that can be used to build out a complete web host stack. Various portions of the stack will include:
 
 	-Reverse Proxy (With SSL termination)
