@@ -6,4 +6,4 @@ sudo apt-get install git -y
 mkdir asgard-test
 git clone https://github.com/ZyxionQuiksilver/asgard-test.git
 cd ~/asgard-test
-sudo chef-client -z -j recipes.json 
+sudo chef-client -z -j ~/asgard-test/recipes.json 
