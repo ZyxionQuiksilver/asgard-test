@@ -14,7 +14,11 @@ cookbook_file   "/etc/apt/sources.list.d/nginx.list" do
         action          :create
 end
 
-include_recipe 'apt'
+execute "add_nginx_repo_key" do
+	command "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62"
+end
+
+include_recipe "apt"
 
 package "nginx" do
 	action	:install
