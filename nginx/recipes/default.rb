@@ -14,11 +14,12 @@
 #        action          :create
 #end
 
-#execute "add_nginx_repo_key" do
-#	command "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62"
-#end
+include_recipe "apt"
 
-#include_recipe "apt"
+apt_repository "nginx-mainline" do
+	uri 	"ppa:nginx/mainline"
+	distrobution node ["lsb"]["trusty"]
+end
 
 package "nginx" do
 	action	[:upgrade, :install]
