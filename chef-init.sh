@@ -10,5 +10,5 @@ git clone https://github.com/ZyxionQuiksilver/asgard-test.git
 #mkdir ~/.chef/cookbooks
 cd ~/asgard-test
 #cp -r ~/asgard-test ~/.chef/cookbooks
-mv -r ~/asgard-test ~/.chef/cookbooks
+mv ~/asgard-test ~/.chef/cookbooks
 sudo chef-client -z -j ~/asgard-test/recipes.json 
