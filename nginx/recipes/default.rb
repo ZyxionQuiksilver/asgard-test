@@ -21,7 +21,7 @@ apt_repository "nginx-mainline" do
 	distrobution node ["lsb"]["trusty"]
 end
 
-execute[apt-get update]
+'execute[apt-get update]'
 
 package "nginx" do
 	action	[:install]
