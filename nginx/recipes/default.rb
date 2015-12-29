@@ -6,6 +6,14 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+cookbook_file   "/etc/apt/sources.list.d/nginx" do
+        source          "nginx.repo"
+        owner           "root"
+        group           "root"
+        mode            "0644"
+        action          :create
+end
+
 package "nginx" do
 	action	:install
 end
