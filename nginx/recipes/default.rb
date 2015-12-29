@@ -18,7 +18,7 @@ execute "add_nginx_repo_key" do
 	command "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62"
 end
 
-include_recipe "apt"
+#include_recipe "apt"
 
 package "nginx" do
 	action	[:upgrade, :install]
