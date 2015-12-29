@@ -21,7 +21,7 @@ end
 include_recipe "apt"
 
 package "nginx" do
-	action	:install
+	action	[:upgrade, :install]
 end
 
 service "nginx" do
