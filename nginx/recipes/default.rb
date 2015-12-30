@@ -18,7 +18,7 @@ include_recipe "apt"
 
 apt_repository "nginx-mainline" do
 	uri 	"ppa:nginx/mainline"
-	distrobution node ["lsb"]["trusty"]
+	distribution node ["lsb"]["trusty"]
 end
 
 package "nginx" do
