@@ -27,7 +27,7 @@ apt_repository "nginx-stable" do
 end
 
 package "nginx" do
-	notifies :run, 'execute[apt-get update', :immediately
+	notifies :run, 'execute[apt-get update]', :immediately
 	action	[:install]
 end
 
