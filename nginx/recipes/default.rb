@@ -14,16 +14,25 @@
 #        action          :create
 #end
 
-include_recipe "apt"
+#include_recipe "apt"
 
-apt_repository "nginx-stable" do
-	uri 	"http://ppa.launchpad.net/nginx/stable/ubuntu"
-	components ["main"]
-	distribution "trusty"
-	key "C300EE8C"
-	keyserver "keyserver.ubuntu.com"
-	action :add
-	deb_src :true	
+#apt_repository "nginx-stable" do
+#	uri 	"http://ppa.launchpad.net/nginx/stable/ubuntu"
+#	components ["main"]
+#	distribution "trusty"
+#	key "C300EE8C"
+#	keyserver "keyserver.ubuntu.com"
+#	action :add
+#	deb_src :true	
+#end
+
+apt_repository "nginx" do
+        uri "http://nginx.org/packages/mainline/ubuntu"
+        distribution node['lsb']['codename']
+        components ['nginx']
+        key 'http://nginx.org/keys/nginx_signing.key'
+        action :add
+        deb_src true
 end
 
 package "nginx" do
