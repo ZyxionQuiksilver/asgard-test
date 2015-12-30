@@ -38,7 +38,8 @@ end
 package "nginx" do
 	#notifies :run, 'execute[apt-get update]', :immediately
 	options 'y'
-	action	[:upgrade, :install]
+	#action	[:upgrade, :install]
+	action	[:install]
 end
 
 service "nginx" do
