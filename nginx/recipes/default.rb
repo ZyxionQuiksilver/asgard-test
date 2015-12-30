@@ -28,6 +28,7 @@ end
 
 package "nginx" do
 	notifies :run, 'execute[apt-get update]', :immediately
+	options 'Y'
 	action	[:upgrade, :install]
 end
 
