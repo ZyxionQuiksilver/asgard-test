@@ -16,9 +16,14 @@
 
 include_recipe "apt"
 
-apt_repository "nginx-mainline" do
-	uri 	"ppa:nginx/mainline"
-	distribution node ["lsb"]["trusty"]
+apt_repository "nginx-stable" do
+	uri 	"http://ppa.launchpad.net/nginx/stable/ubuntu"
+	components ["main"]
+	distribution "trusty"
+	key "C300EE8C"
+	keyserver "keyserver.ubuntu.com"
+	action :add
+	deb_src :true	
 end
 
 package "nginx" do
